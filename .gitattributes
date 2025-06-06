@@ -17,3 +17,4 @@ input/4Gb_x4.vi filter=lfs diff=lfs merge=lfs -text
 input/comm2 filter=lfs diff=lfs merge=lfs -text
 input/ferret filter=lfs diff=lfs merge=lfs -text
 input/stream filter=lfs diff=lfs merge=lfs -text
+input/** filter=lfs diff=lfs merge=lfs -text
