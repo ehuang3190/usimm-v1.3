@@ -78,6 +78,14 @@ void schedule(int channel)
     if (CYCLE_VAL % 1000 == 0) {
         cluster_threads();
     }
+    //periodically reset thread service rates
+    if (CYCLE_VAL % 1000 == 0) {
+        int i;
+        for (i = 0; i < NUM_THREADS; i++) {
+            thread_service_rate[i] = 0;
+        }
+    }
+
 
     // Prioritize latency-sensitive threads
     LL_FOREACH(read_queue_head[channel], rd_ptr)
